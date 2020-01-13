@@ -28,7 +28,7 @@ def posMoneyFlow():
 
 
 def negMoneyFlow():
-    pass
+    return None
 
 
 def posMoneyFlowSum():
