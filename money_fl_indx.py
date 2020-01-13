@@ -24,7 +24,7 @@ def typicalPrice(high, low, close):
 
 
 def posMoneyFlow():
-    pass
+    return None
 
 
 def negMoneyFlow():
