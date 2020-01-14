@@ -5,7 +5,7 @@ df = pd.read_csv('census.csv', header=None)
 print(df.head()) 
 
 def arrangingRules(rules):
-    print(rules)
+    # print(rules)
     
 
 def count_val(df, text):
