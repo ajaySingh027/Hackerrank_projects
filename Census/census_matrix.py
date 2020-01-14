@@ -5,7 +5,36 @@ df = pd.read_csv('census.csv', header=None)
 print(df.head()) 
 
 def arrangingRules(rules):
-    # print(rules)
+    
+    confidn = {}
+    
+    for rule in rules:
+        iter = 0
+        X = 0
+        XY = 0
+        temp_df = df
+        print(rule + ": ----")
+        sub_list = rule.split('=>')
+        for item in sub_list:
+            str_1 = item.strip('{}')
+            list_2 = str_1.split(',')
+            
+            # Support value for list_2
+            if iter == 0:
+                temp_df, X = len_stringSearch(temp_df, list_2)
+                print("X:-- " + str(X))
+            else:
+                temp_df, XY = len_stringSearch(temp_df, list_2)
+                print("XY:-- " + str(XY))
+            
+            iter += 1
+        
+        
+        # Adding the confidence value for each rule to dictionary
+        confidn[rule] = (XY / X)
+    
+    return confidn
+    
     
 
 def count_val(df, text):
