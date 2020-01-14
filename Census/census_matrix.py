@@ -8,6 +8,14 @@ def arrangingRules(rules):
     print(rules)
     
 
+def count_val(df, text):
+    '''
+    For Counting the specific pattern values in the Dataframe
+    '''
+    mask = df.applymap(lambda x: text in str(x))
+    temp_df = df[mask.any(axis=1)]
+    return temp_df, len(temp_df)
+
 if __name__ == '__main__':
     fptr = open(os.environ['OUTPUT_PATH'], 'w')
 
