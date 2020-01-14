@@ -16,6 +16,18 @@ def count_val(df, text):
     temp_df = df[mask.any(axis=1)]
     return temp_df, len(temp_df)
 
+
+def len_stringSearch(df, myList = []):
+    '''
+    to count the number of rows with specific text(s) in Cells
+    '''
+    temp_df = df
+    for element in myList:
+        temp_df, count = count_val(temp_df, element)
+    
+    return temp_df, count
+
+
 if __name__ == '__main__':
     fptr = open(os.environ['OUTPUT_PATH'], 'w')
 
