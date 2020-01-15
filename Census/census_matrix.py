@@ -36,7 +36,9 @@ def arrangingRules(rules):
     
     # Sorting the dictionary keys in descending order -----
     res_descending = OrderedDict(sorted(confidn.items(), key=lambda kv: kv[1], reverse=True))
+    result = [x for x in res_descending.keys()]
 
+    return result
 
     
 
