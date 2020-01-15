@@ -37,7 +37,23 @@ def findCombinations(num):
     full_list = list(dict.fromkeys(full_list))
     
     return full_list
+
+
+def finalSupport(full_list, threshold):
+    '''
+    To scan each item in list and compare with threshold value to retain it
+    '''
+    # Final list to contain the combinations
+    finalList = []
+    for item in full_list:
+        support = 0
+        temp_df, count = len_stringSearch(df, item)
+        support = count / len(df)
+        if support >= threshold:
+            finalList.extend(item)
     
+    return finalList
+
     
 if __name__ == '__main__':
     fptr = open(os.environ['OUTPUT_PATH'], 'w')
