@@ -1,5 +1,6 @@
 import pandas as pd
 import numpy as np
+from collections import OrderedDict
 
 df = pd.read_csv('census.csv', header=None)
 print(df.head()) 
@@ -33,8 +34,10 @@ def arrangingRules(rules):
         # Adding the confidence value for each rule to dictionary
         confidn[rule] = (XY / X)
     
-    return confidn
-    
+    # Sorting the dictionary keys in descending order -----
+    res_descending = OrderedDict(sorted(confidn.items(), key=lambda kv: kv[1], reverse=True))
+
+
     
 
 def count_val(df, text):
