@@ -9,7 +9,12 @@ import sys
 import pandas as pd
 
 df = pd.read_csv('census.csv', header=None)
-print(df)
+# print(df)
+
+# New df for storing the unique rows data
+df_unique = df.drop_duplicates()
+
+# len(df.drop_duplicates())
 
 def attributesSet(numberOfAttributes, supportThreshold):
     
