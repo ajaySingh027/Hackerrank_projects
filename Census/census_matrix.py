@@ -2,8 +2,9 @@ import pandas as pd
 import numpy as np
 from collections import OrderedDict
 
-df = pd.read_csv('census.csv', header=None)
-print(df.head()) 
+url = 'https://s3.amazonaws.com/istreet-questions-us-east-1/443606/census.csv'
+
+df = pd.read_csv(url, header=None)
 
 def arrangingRules(rules):
     
@@ -46,8 +47,10 @@ def count_val(df, text):
     '''
     For Counting the specific pattern values in the Dataframe
     '''
-    mask = df.applymap(lambda x: text in str(x))
-    temp_df = df[mask.any(axis=1)]
+    # mask = df.applymap(lambda x: text in str(x))
+    # temp_df = df[mask.any(axis=1)]
+    mask = np.column_stack([df[col].str.contains(text, na=False) for col in df])
+    temp_df = df.loc[mask.any(axis=1)]
     return temp_df, len(temp_df)
 
 
