@@ -9,7 +9,9 @@ import sys
 import pandas as pd
 import itertools
 
-df = pd.read_csv('census.csv', header=None)
+# df = pd.read_csv('census.csv', header=None)
+url = 'https://s3.amazonaws.com/istreet-questions-us-east-1/443605/census.csv'
+df = pd.read_csv(url, header=None)
 # print(df)
 
 # New df for storing the unique rows data
