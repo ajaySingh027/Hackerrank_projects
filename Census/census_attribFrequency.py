@@ -7,6 +7,7 @@ import re
 import sys
 
 import pandas as pd
+import itertools
 
 df = pd.read_csv('census.csv', header=None)
 # print(df)
