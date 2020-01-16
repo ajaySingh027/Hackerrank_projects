@@ -55,7 +55,7 @@ def finalSupport(full_list, threshold):
         temp_df, count = len_stringSearch(df, item)
         support = count / len(df)
         if support >= threshold:
-            finalList.extend(item)
+            finalList.append(item)
     
     return finalList
 
