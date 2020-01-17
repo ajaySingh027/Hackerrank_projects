@@ -32,7 +32,7 @@ def attributesSet(numberOfAttributes, supportThreshold):
 
 def findCombinations(num):
     '''
-    to find the (num) number of combinations in unique df records
+    To find the (num) number of combinations in unique df records
     '''
     
     # Full list to contain all combinations from all rows in df_unique
@@ -43,6 +43,7 @@ def findCombinations(num):
         
     # removing the duplicate combinations
     full_list = list(dict.fromkeys(full_list))
+    # full_list = set(full_list)
     
     return full_list
 
