@@ -67,8 +67,17 @@ def len_stringSearch(df, myList = []):
     to count the number of rows with specific text(s) in Cells
     '''
     temp_df = df
-    for element in myList:
-        temp_df, count = count_val(temp_df, element)
+    # print(myList)
+    # for element in myList:
+        # temp_df, count = count_val(temp_df, element)
+    
+    file = open('census.csv', 'r')
+    count = 0
+    for line in file.readlines():
+        print(myList)
+        if all(elem in line for elem in myList):
+            count += 1
+    print(count)
     
     return temp_df, count
 
